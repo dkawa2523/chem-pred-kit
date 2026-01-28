@@ -1,0 +1,18 @@
+defaults:
+  - process: evaluate
+  - dataset: default
+  - task: lj_epsilon
+  - eval: default
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/fp/lgbm_morgan_desc_v1"
+
+process:
+  backend: "fp"
+
+experiment:
+  name: "fp_evaluate"
+
+output:
+  exp_name: "fp_evaluate"

@@ -1,0 +1,6 @@
+process:
+  name: "leaderboard"
+  kind: "leaderboard"
+
+output:
+  run_dir: "runs/leaderboard"

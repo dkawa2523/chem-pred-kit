@@ -1,0 +1,5 @@
+task:
+  name: "self_supervised_graphcl"
+  type: "self_supervised"
+  metrics: "none"
+  target_columns: []

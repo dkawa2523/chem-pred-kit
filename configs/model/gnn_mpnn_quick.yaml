@@ -1,0 +1,7 @@
+model:
+  family: "gnn"
+  name: "mpnn"
+  hidden_dim: 64
+  num_layers: 3
+  dropout: 0.1
+  edge_mlp_hidden_dim: 64

@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: moleculenet
+  - target_registry: moleculenet_esol
+  - hydra: default
+  - _self_

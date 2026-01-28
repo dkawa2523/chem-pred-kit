@@ -1,0 +1,18 @@
+data/processed/
+runs/
+.cache/
+.venv/
+.DS_Store
+__pycache__/
+*.pyc
+*.pkl
+*.pt
+*.npz
+*.log
+
+# Raw data (keep code repo lightweight)
+data/raw/*
+!data/raw/README.md
+!data/raw/sdf_files/
+data/raw/sdf_files/*
+!data/raw/sdf_files/README.md

@@ -1,0 +1,8 @@
+model:
+  family: "fp"
+  name: "gpr"
+  params:
+    alpha: 1.0e-6
+    normalize_y: true
+    n_restarts_optimizer: 2
+    random_state: 42

@@ -1,0 +1,45 @@
+paths:
+  raw_csv: "data/Lj_dataset/LJ_parameters.csv"
+  sdf_dir: "data/Lj_dataset/sdf_files"
+  out_csv: "data/Lj_dataset/processed/dataset_with_lj.csv"
+  out_indices_dir: "data/Lj_dataset/processed/indices"
+
+columns:
+  cas: "CAS"
+  formula: "MolecularFormula"
+  tc: "Tc [K]"
+  pc: "Pc [Pa]"
+  tb: "Tb [K]"
+
+dataset:
+  name: "lj"
+  units:
+    lj_epsilon_over_k_K: "K"
+    lj_sigma_A: "A"
+
+seed: 42
+
+lj:
+  epsilon_method: "bird_critical"
+  sigma_method: "bird_critical"
+  epsilon_col: "lj_epsilon_over_k_K"
+  sigma_col: "lj_sigma_A"
+  valid_range:
+    epsilon_over_k_K: [1.0, 5000.0]
+    sigma_A: [1.0, 20.0]
+
+filter_invalid_lj: true
+
+selectors: []
+
+split:
+  method: "scaffold"
+  seed: 42
+  fractions: [0.8, 0.1, 0.1]
+  group_key: "cas"
+
+data:
+  dataset_csv: "data/Lj_dataset/processed/dataset_with_lj.csv"
+  indices_dir: "data/Lj_dataset/processed/indices"
+  sdf_dir: "data/Lj_dataset/sdf_files"
+  cas_col: "CAS"

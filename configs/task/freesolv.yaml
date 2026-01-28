@@ -1,0 +1,14 @@
+defaults:
+  - target_registry: moleculenet_freesolv
+  - _self_
+
+task:
+  name: "freesolv"
+  type: "regression"
+  target_names:
+    - "freesolv"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "freesolv"

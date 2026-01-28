@@ -1,0 +1,11 @@
+self_supervised:
+  method: "graphcl"
+  splits: ["train"]
+  projection_dim: 128
+  projection_hidden_dim: 256
+  projection_dropout: 0.0
+  temperature: 0.2
+  max_samples: 0
+  augmentations:
+    edge_drop: 0.2
+    node_feature_mask: 0.15

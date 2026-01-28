@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: qm9_quick
+  - task: gap_zscore
+  - preprocess: none
+  - features: smiles_tokenizer_qm9
+  - model: chemberta_qm9
+  - pretrain: default
+  - train: smiles_quick_improved
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "chemberta_qm9_quick_improved"
+
+process:
+  backend: "smiles"
+
+output:
+  run_dir: "runs/train/smiles"
+  exp_name: "chemberta_qm9_quick_improved"

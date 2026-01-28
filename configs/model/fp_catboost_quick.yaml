@@ -1,0 +1,9 @@
+model:
+  family: "fp"
+  name: "catboost"
+  params:
+    iterations: 500
+    learning_rate: 0.05
+    depth: 8
+    loss_function: "RMSE"
+    random_seed: 42

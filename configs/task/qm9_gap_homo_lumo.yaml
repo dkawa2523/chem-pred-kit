@@ -1,0 +1,18 @@
+defaults:
+  - target_registry: qm9
+  - _self_
+
+task:
+  name: "qm9_gap_homo_lumo"
+  type: "regression"
+  targets:
+    - "gap"
+    - "homo"
+    - "lumo"
+  metrics: "regression"
+
+data:
+  targets:
+    - "gap"
+    - "homo"
+    - "lumo"

@@ -1,0 +1,33 @@
+defaults:
+  - process: train
+  - dataset: lj_dataset_organic
+  - task: lj_epsilon_sigma_aux_derived
+  - preprocess: none
+  - features: gnn_graph_organic
+  - model: gnn_mpnn
+  - pretrain: default
+  - train: gnn_mpnn_organic
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "mpnn_lj_dataset_organic_v3"
+
+process:
+  backend: "gnn"
+
+loss:
+  weights:
+    lj_epsilon_over_k_K: 5.0
+    lj_sigma_A: 1.0
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "mpnn_lj_dataset_organic_v3"
+
+train:
+  epochs: 20
+
+preprocess:
+  capability_auto: "on"

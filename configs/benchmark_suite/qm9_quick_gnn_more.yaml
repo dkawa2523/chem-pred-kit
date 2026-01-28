@@ -1,0 +1,34 @@
+benchmark_suite:
+  name: "qm9_quick_gnn_more"
+  description: "QM9 quick extra GNNs (DimeNet++ + Graphormer + GraphTransformer)."
+  matrix:
+    datasets: ["qm9_quick"]
+    targets: ["gap_zscore"]
+    entries:
+      - name: "dimenetpp_radius_quick"
+        model: "dimenetpp"
+        features: "gnn_dimenetpp_quick"
+      - name: "graphormer_graph_quick"
+        model: "graphormer"
+        features: "gnn_graph_quick"
+      - name: "graph_transformer_graph_quick"
+        model: "graph_transformer"
+        features: "gnn_graph_quick"
+  defaults:
+    preprocess:
+      fp: "fp_default"
+      gnn: "none"
+    train:
+      fp: "fp_default"
+      gnn: "gnn_quick_3d"
+    pretrain: "default"
+    eval: "default"
+  run:
+    evaluate: true
+    visualize: false
+    leaderboard: false
+    stop_on_error: true
+    dry_run: false
+  tags:
+    - "benchmark"
+    - "suite:qm9_quick_gnn_more"

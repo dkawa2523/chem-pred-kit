@@ -1,0 +1,28 @@
+{
+  "skills": [
+    {
+      "id": "S21_dataset_adapters",
+      "path": "work/agentskills/skills/chemkit_next/S21_dataset_adapters.md"
+    },
+    {
+      "id": "S42_features_3d",
+      "path": "work/agentskills/skills/chemkit_next/S42_features_3d.md"
+    },
+    {
+      "id": "S53_models_3d_gnns",
+      "path": "work/agentskills/skills/chemkit_next/S53_models_3d_gnns.md"
+    },
+    {
+      "id": "S63_multitask",
+      "path": "work/agentskills/skills/chemkit_next/S63_multitask.md"
+    },
+    {
+      "id": "S64_pretraining",
+      "path": "work/agentskills/skills/chemkit_next/S64_pretraining.md"
+    },
+    {
+      "id": "S72_benchmarks_eval_viz",
+      "path": "work/agentskills/skills/chemkit_next/S72_benchmarks_eval_viz.md"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+process:
+  name: "predict"
+  kind: "predict"
+
+output:
+  out_dir: "runs/predict"

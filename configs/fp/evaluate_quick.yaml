@@ -1,0 +1,18 @@
+defaults:
+  - process: evaluate
+  - dataset: quick
+  - task: lj_epsilon
+  - eval: quick
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/fp/quick_lgbm_morgan_v1"
+
+process:
+  backend: "fp"
+
+experiment:
+  name: "fp_evaluate_quick"
+
+output:
+  exp_name: "fp_evaluate_quick"

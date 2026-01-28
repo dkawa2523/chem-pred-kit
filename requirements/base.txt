@@ -1,0 +1,9 @@
+# Core runtime deps for base CI (FP + dataset fixtures)
+numpy
+pandas
+pyyaml
+tqdm
+matplotlib
+scikit-learn
+joblib
+rdkit-pypi

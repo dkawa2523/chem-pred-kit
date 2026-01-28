@@ -1,0 +1,14 @@
+defaults:
+  - process: predict
+  - dataset: default
+  - infer: gnn_default
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/gnn/mpnn_desc_v1"
+
+process:
+  backend: "gnn"
+
+output:
+  exp_name: "gnn_predict"

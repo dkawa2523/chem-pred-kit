@@ -1,0 +1,70 @@
+defaults:
+  - process: train
+  - dataset: default
+  - task: lj_epsilon
+  - preprocess: none
+  - features: gnn_graph
+  - model: gnn_mpnn
+  - pretrain: default
+  - train: gnn_default
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "gnn_experiment"
+
+process:
+  backend: "gnn"
+
+data:
+  dataset_csv: "data/processed/dataset_with_lj.csv"
+  indices_dir: "data/processed/indices"
+  sdf_dir: "data/raw/sdf_files"
+  cas_col: "CAS"
+  sample_id_col: "CAS"
+  smiles_col: null
+
+ad:
+  tanimoto_warn_threshold: 0.5
+  top_k: 5
+
+train:
+  epochs: 10
+  batch_size: 32
+  lr: 0.01
+  weight_decay: 1.0e-5
+  loss: "huber"
+  early_stopping:
+    patience: 20
+  seed: 42
+  device: "auto"
+  progress_bar: true
+  log_interval_sec: 30.0
+
+pretrain:
+  ckpt_path: null
+  mode: "finetune"
+  strict: false
+  head_patterns: ["head", "classifier", "predictor", "regressor"]
+  freeze_patterns: []
+  trainable_patterns: []
+
+conformer:
+  enabled: true
+  seed: 42
+  method: "etkdg"
+  forcefield: "uff"
+  max_iters: 200
+  max_attempts: 3
+  num_conformers: 1
+  aggregation: "mean"
+  on_failure: "retry"
+  cache_enabled: true
+  use_smiles_fallback: true
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "gnn_experiment"
+  model_version: "gnn_experiment"
+  plots: true

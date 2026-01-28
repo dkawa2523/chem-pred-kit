@@ -1,0 +1,11 @@
+pretrain:
+  ckpt_path: "runs/train/gnn/qm9_pretrain_mpnn_v1"
+  mode: "finetune"
+  strict: false
+  head_patterns:
+    - "head"
+    - "classifier"
+    - "predictor"
+    - "regressor"
+  freeze_patterns: []
+  trainable_patterns: []

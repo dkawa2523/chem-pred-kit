@@ -1,0 +1,19 @@
+defaults:
+  - process: evaluate
+  - dataset: qm9_quick
+  - task: gap_zscore
+  - eval: default
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/smiles/chemberta_qm9_quick_improved"
+
+process:
+  backend: "smiles"
+
+experiment:
+  name: "smiles_qm9_quick_improved_evaluate"
+
+output:
+  run_dir: "runs/evaluate"
+  exp_name: "smiles_qm9_quick_improved_evaluate"

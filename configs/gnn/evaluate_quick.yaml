@@ -1,0 +1,18 @@
+defaults:
+  - process: evaluate
+  - dataset: quick
+  - task: lj_epsilon
+  - eval: quick
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/gnn/quick_gcn_v1"
+
+process:
+  backend: "gnn"
+
+experiment:
+  name: "gnn_evaluate_quick"
+
+output:
+  exp_name: "gnn_evaluate_quick"

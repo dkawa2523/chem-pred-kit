@@ -1,0 +1,14 @@
+defaults:
+  - target_registry: lj
+  - _self_
+
+task:
+  name: "lj_sigma"
+  type: "regression"
+  target_names:
+    - "lj_sigma_A"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "lj_sigma_A"

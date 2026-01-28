@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: lj
+  - task: lj_epsilon
+  - preprocess: none
+  - features: gnn_graph
+  - model: gnn_mpnn
+  - pretrain: qm9_supervised
+  - train: gnn_default
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "lj_epsilon_mpnn_qm9_finetune_v1"
+
+process:
+  backend: "gnn"
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "lj_epsilon_mpnn_qm9_finetune_v1"

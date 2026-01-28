@@ -1,0 +1,6 @@
+model:
+  family: "fp"
+  name: "rf"
+  params:
+    n_estimators: 50
+    random_state: 42

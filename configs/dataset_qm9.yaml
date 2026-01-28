@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: qm9
+  - target_registry: qm9
+  - hydra: default
+  - _self_

@@ -1,0 +1,5 @@
+# PyTorch Geometric core deps for 2D GNNs
+# Install torch separately to match your platform/CUDA.
+torch-geometric
+torch-scatter
+torch-sparse

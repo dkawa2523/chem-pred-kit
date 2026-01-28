@@ -1,0 +1,11 @@
+pretrain:
+  ckpt_path: null
+  mode: "finetune"
+  strict: false
+  head_patterns:
+    - "head"
+    - "classifier"
+    - "predictor"
+    - "regressor"
+  freeze_patterns: []
+  trainable_patterns: []

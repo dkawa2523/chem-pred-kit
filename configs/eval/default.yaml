@@ -1,0 +1,11 @@
+ad:
+  tanimoto_warn_threshold: 0.5
+  top_k: 5
+
+output:
+  plots: false
+
+uncertainty:
+  method: null
+  n_samples: 30
+  eps: 1.0e-6

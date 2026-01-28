@@ -1,0 +1,56 @@
+paths:
+  raw_csv: "data/raw/tc_pc_tb_pubchem.csv"
+  sdf_dir: "data/raw/sdf_files"
+  out_csv: "data/processed/quick/dataset_with_lj.csv"
+  out_indices_dir: "data/processed/quick/indices"
+
+columns:
+  cas: "CAS"
+  formula: "MolecularFormula"
+  tc: "Tc [K]"
+  pc: "Pc [Pa]"
+  tb: "Tb [K]"
+
+dataset:
+  name: "lj_quick"
+  units:
+    lj_epsilon_over_k_K: "K"
+    lj_sigma_A: "A"
+
+seed: 42
+
+limit_rows: 2000
+
+lj:
+  epsilon_method: "bird_critical"
+  sigma_method: "bird_critical"
+  epsilon_col: "lj_epsilon_over_k_K"
+  sigma_col: "lj_sigma_A"
+  valid_range:
+    epsilon_over_k_K: [1.0, 5000.0]
+    sigma_A: [1.0, 20.0]
+
+filter_invalid_lj: true
+
+selectors:
+  - name: "element_whitelist"
+    params:
+      allowed: ["C","H","N","O","S","P","F","Cl","Br","I"]
+  - name: "min_element_frequency"
+    params:
+      min_count: 10
+  - name: "max_size"
+    params:
+      max_heavy_atoms: 60
+
+split:
+  method: "random"
+  seed: 42
+  fractions: [0.8, 0.1, 0.1]
+  group_key: "cas"
+
+data:
+  dataset_csv: "data/processed/quick/dataset_with_lj.csv"
+  indices_dir: "data/processed/quick/indices"
+  sdf_dir: "data/raw/sdf_files"
+  cas_col: "CAS"

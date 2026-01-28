@@ -1,0 +1,20 @@
+leaderboard:
+  root_dir: "runs"
+  metric_key: "r2"
+  metric_split: "val"
+  sort_order: "desc"
+  top_n: 20
+  target_mode: "all"
+  target_names: []
+  target_top_n: null
+  filters:
+    task_name: null
+    model_name: null
+    featureset_name: null
+    process_name: null
+    dataset_hash: null
+    run_id: null
+    git_sha: null
+    tags: []
+    created_after: null
+    created_before: null

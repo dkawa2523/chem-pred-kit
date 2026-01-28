@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: fixture
+  - task: lj_epsilon
+  - hydra: default
+  - _self_

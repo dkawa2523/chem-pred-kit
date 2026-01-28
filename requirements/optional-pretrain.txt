@@ -1,0 +1,2 @@
+# Optional pretrain deps (extend as needed)
+-r optional-transformer.txt

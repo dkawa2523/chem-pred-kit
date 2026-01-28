@@ -1,0 +1,37 @@
+paths:
+  raw_csv: "data/raw/pcqm4mv2/pcqm4mv2.csv"
+  sdf_dir: "data/processed/pcqm4mv2/sdf"
+  out_csv: "data/processed/pcqm4mv2/dataset.csv"
+  out_indices_dir: "data/processed/pcqm4mv2/indices"
+
+columns:
+  sample_id: "sample_id"
+  cas: "sample_id"
+  smiles: "smiles"
+
+dataset:
+  name: "pcqm4mv2"
+  units:
+    gap: "eV"
+
+pcqm4mv2:
+  root: "data/raw/pcqm4mv2"
+  allow_download: true
+  add_hs: true
+  compute_2d: true
+  overwrite_sdf: false
+  write_sdf: true
+  canonicalize_smiles: true
+  only_smiles: false
+  target_name: "homo_lumo_gap"
+
+seed: 42
+
+split:
+  method: "ogb"
+
+data:
+  dataset_csv: "data/processed/pcqm4mv2/dataset.csv"
+  indices_dir: "data/processed/pcqm4mv2/indices"
+  sdf_dir: "data/processed/pcqm4mv2/sdf"
+  cas_col: "sample_id"

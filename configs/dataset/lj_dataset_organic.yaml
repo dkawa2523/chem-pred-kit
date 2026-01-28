@@ -1,0 +1,62 @@
+paths:
+  raw_csv: "data/Lj_dataset/LJ_parameters.csv"
+  sdf_dir: "data/Lj_dataset/sdf_files"
+  out_csv: "data/Lj_dataset/processed_organic/dataset_with_lj.csv"
+  out_indices_dir: "data/Lj_dataset/processed_organic/indices"
+
+columns:
+  cas: "CAS"
+  formula: "MolecularFormula"
+  tc: "Tc [K]"
+  pc: "Pc [Pa]"
+  tb: "Tb [K]"
+
+dataset:
+  name: "lj"
+  units:
+    lj_epsilon_over_k_K: "K"
+    lj_sigma_A: "A"
+
+seed: 42
+
+lj:
+  epsilon_method: "bird_critical"
+  sigma_method: "bird_critical"
+  epsilon_col: "lj_epsilon_over_k_K"
+  sigma_col: "lj_sigma_A"
+  valid_range:
+    epsilon_over_k_K: [1.0, 5000.0]
+    sigma_A: [1.0, 20.0]
+
+filter_invalid_lj: true
+
+selectors:
+  - name: "element_whitelist"
+    params:
+      allowed: ["C","H","N","O","S","P","F","Cl","Br","I"]
+  - name: "target_stratified"
+    params:
+      target_col: "lj_epsilon_over_k_K"
+      n_bins: 20
+      samples_per_bin: 500
+      seed: 42
+
+split:
+  method: "random"
+  seed: 42
+  fractions: [0.8, 0.1, 0.1]
+  leakage_check:
+    enabled: true
+    group_key: "canonical_smiles"
+    mode: "error"
+
+audit:
+  enabled: "auto"
+  duplicate:
+    methods: ["canonical_smiles", "inchikey"]
+
+data:
+  dataset_csv: "data/Lj_dataset/processed_organic/dataset_with_lj.csv"
+  indices_dir: "data/Lj_dataset/processed_organic/indices"
+  sdf_dir: "data/Lj_dataset/sdf_files"
+  cas_col: "CAS"

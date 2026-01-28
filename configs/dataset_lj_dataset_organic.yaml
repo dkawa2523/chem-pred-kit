@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: lj_dataset_organic
+  - task: lj_epsilon_sigma_scaled
+  - hydra: default
+  - _self_

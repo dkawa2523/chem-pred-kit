@@ -1,0 +1,9 @@
+model:
+  name: "chemberta"
+  pretrained_name: "seyonec/ChemBERTa-zinc-base-v1"
+  pooling: "mean"
+  dropout: 0.1
+  head_hidden_dim: 256
+  use_pretrained: true
+  local_files_only: true
+  gradient_checkpointing: false

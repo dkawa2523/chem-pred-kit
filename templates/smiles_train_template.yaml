@@ -1,0 +1,46 @@
+defaults:
+  - process: train
+  - dataset: qm9
+  - task: gap
+  - preprocess: none
+  - features: smiles_tokenizer
+  - model: chemberta
+  - pretrain: default
+  - train: smiles_default
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "smiles_experiment"
+
+process:
+  backend: "smiles"
+
+data:
+  dataset_csv: "data/processed/qm9/dataset.csv"
+  indices_dir: "data/processed/qm9/indices"
+  sdf_dir: "data/processed/qm9/sdf"
+  cas_col: "sample_id"
+  sample_id_col: "sample_id"
+  smiles_col: "smiles"
+
+train:
+  epochs: 5
+  batch_size: 16
+  lr: 1.0e-5
+  weight_decay: 1.0e-5
+  loss: "mse"
+  early_stopping:
+    patience: 5
+  seed: 42
+  device: "auto"
+  progress_bar: true
+  log_interval_sec: 30.0
+  freeze_encoder_epochs: 0
+
+output:
+  run_dir: "runs/train/smiles"
+  exp_name: "smiles_experiment"
+  model_version: "smiles_experiment"
+  plots: true

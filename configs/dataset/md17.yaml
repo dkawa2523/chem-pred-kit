@@ -1,0 +1,41 @@
+paths:
+  raw_csv: "data/raw/md17/md17.csv"
+  sdf_dir: "data/raw/md17/sdf"
+  out_csv: "data/processed/md17/dataset.csv"
+  out_indices_dir: "data/processed/md17/indices"
+
+columns:
+  sample_id: "sample_id"
+  cas: "sample_id"
+  time: "time"
+  energy: "energy"
+  forces: "forces"
+  atomic_numbers: "atomic_numbers"
+  positions: "positions"
+  sdf_path: "sdf_path"
+
+dataset:
+  name: "md17"
+  units:
+    energy: "kcal/mol"
+    forces: "kcal/(mol*angstrom)"
+
+md17:
+  write_sdf: true
+  overwrite_sdf: false
+  require_3d: true
+  infer_bonds: false
+
+seed: 42
+
+split:
+  method: "time"
+  time_key: "time"
+  ascending: true
+  fractions: [0.8, 0.1, 0.1]
+
+data:
+  dataset_csv: "data/processed/md17/dataset.csv"
+  indices_dir: "data/processed/md17/indices"
+  sdf_dir: "data/raw/md17/sdf"
+  cas_col: "sample_id"

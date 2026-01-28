@@ -1,0 +1,14 @@
+defaults:
+  - process: predict
+  - dataset: qm9
+  - infer: smiles_default
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/smiles/chemberta_qm9"
+
+process:
+  backend: "smiles"
+
+output:
+  exp_name: "smiles_predict"

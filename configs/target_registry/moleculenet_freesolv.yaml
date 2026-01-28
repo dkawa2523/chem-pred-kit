@@ -1,0 +1,4 @@
+target_registry:
+  - name: "freesolv"
+    aliases: ["FreeSolv", "expt", "exp", "hydration_free_energy"]
+    units: "kcal/mol"

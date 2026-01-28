@@ -1,0 +1,11 @@
+defaults:
+  - process: benchmark_suite
+  - benchmark_suite: qm9_quick_baseline
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "qm9_quick_baseline"
+
+output:
+  exp_name: "qm9_quick_baseline"

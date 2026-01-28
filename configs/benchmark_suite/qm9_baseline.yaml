@@ -1,0 +1,50 @@
+benchmark_suite:
+  name: "qm9_baseline"
+  description: "QM9 baseline matrix: FP/GCN/SchNet."
+  matrix:
+    datasets: ["qm9"]
+    targets: ["gap"]
+    entries:
+      - name: "fp_morgan_lgbm"
+        model: "fp_lightgbm"
+        features: "fp_morgan_desc"
+      - name: "gcn_graph"
+        model: "gcn"
+        features: "gnn_graph"
+      - name: "schnet_radius"
+        model: "schnet"
+        features: "gnn_radius_graph"
+  defaults:
+    preprocess:
+      fp: "fp_default"
+      gnn: "none"
+    train:
+      fp: "fp_default"
+      gnn: "gnn_default"
+    pretrain: "default"
+    eval: "default"
+    visualize:
+      splits: ["val", "test"]
+      include_train_hist: true
+      target_mode: "primary"
+      embedding:
+        enabled: true
+        method: "tsne"
+        source: "encoder"
+        color_by: "target"
+        max_samples: 2000
+        random_state: 42
+  leaderboard:
+    metric_key: "mae"
+    metric_split: "val"
+    sort_order: "asc"
+    top_n: 20
+  run:
+    evaluate: true
+    visualize: true
+    leaderboard: true
+    stop_on_error: true
+    dry_run: false
+  tags:
+    - "benchmark"
+    - "suite:qm9_baseline"

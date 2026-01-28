@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: quick
+  - task: lj_epsilon
+  - preprocess: fp_default
+  - features: fp_morgan_quick
+  - model: fp_lightgbm_quick
+  - pretrain: default
+  - train: fp_default
+  - eval: quick
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "quick_lgbm_morgan_v1"
+
+process:
+  backend: "fp"
+
+output:
+  run_dir: "runs/train/fp"
+  exp_name: "quick_lgbm_morgan_v1"

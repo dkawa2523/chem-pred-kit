@@ -1,0 +1,24 @@
+defaults:
+  - process: visualize
+  - hydra: default
+  - _self_
+
+input:
+  evaluate_run_dir: "runs/evaluate/gnn_evaluate_quick"
+
+plots:
+  splits: ["val", "test"]
+  include_train_hist: true
+  target_mode: "primary"
+  error_slicing:
+    enabled: true
+    min_samples: 1
+
+process:
+  backend: "gnn"
+
+experiment:
+  name: "gnn_visualize_quick"
+
+output:
+  exp_name: "gnn_visualize_quick"

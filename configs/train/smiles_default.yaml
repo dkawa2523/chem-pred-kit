@@ -1,0 +1,12 @@
+train:
+  epochs: 5
+  batch_size: 16
+  lr: 1.0e-5
+  weight_decay: 1.0e-5
+  loss: "mse"
+  early_stopping:
+    patience: 5
+  seed: 42
+  device: "auto"
+  progress_bar: true
+  log_interval_sec: 30.0

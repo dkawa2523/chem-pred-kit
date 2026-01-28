@@ -1,0 +1,36 @@
+target_registry:
+  - name: "lj_epsilon_over_k_K"
+    aliases:
+      - "lj_epsilon_over_k_K"
+      - "epsilon_over_k_K"
+    units: "K"
+    dtype: "float"
+    source_type: "estimated"
+  - name: "lj_sigma_A"
+    aliases:
+      - "lj_sigma_A"
+      - "sigma_A"
+    units: "A"
+    dtype: "float"
+    source_type: "estimated"
+  - name: "Tc [K]"
+    aliases:
+      - "Tc [K]"
+      - "Tc"
+    units: "K"
+    dtype: "float"
+    source_type: "measured"
+  - name: "Pc [Pa]"
+    aliases:
+      - "Pc [Pa]"
+      - "Pc"
+    units: "Pa"
+    dtype: "float"
+    source_type: "measured"
+  - name: "Tb [K]"
+    aliases:
+      - "Tb [K]"
+      - "Tb"
+    units: "K"
+    dtype: "float"
+    source_type: "measured"

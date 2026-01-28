@@ -1,0 +1,4 @@
+# Optional 3D GNN deps (SchNet/DimeNet++/PaiNN)
+torch-cluster
+# torchmd-net (PaiNN fallback backend); install from source if needed:
+# git+https://github.com/torchmd/torchmd-net.git

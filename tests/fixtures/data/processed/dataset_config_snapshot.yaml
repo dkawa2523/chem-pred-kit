@@ -1,0 +1,51 @@
+process:
+  name: build_dataset
+  kind: build_dataset
+paths:
+  raw_csv: tests/fixtures/data/raw/tc_pc_tb_fixture.csv
+  sdf_dir: tests/fixtures/data/raw/sdf_files
+  out_csv: tests/fixtures/data/processed/dataset_with_lj.csv
+  out_indices_dir: tests/fixtures/data/processed/indices
+columns:
+  cas: CAS
+  formula: MolecularFormula
+  tc: Tc [K]
+  pc: Pc [Pa]
+  tb: Tb [K]
+seed: 42
+lj:
+  epsilon_method: bird_critical
+  sigma_method: bird_critical
+  epsilon_col: lj_epsilon_over_k_K
+  sigma_col: lj_sigma_A
+  valid_range:
+    epsilon_over_k_K:
+    - 1.0
+    - 5000.0
+    sigma_A:
+    - 1.0
+    - 20.0
+filter_invalid_lj: true
+selectors: []
+split:
+  method: random
+  seed: 42
+  ratios:
+  - 0.6
+  - 0.2
+  - 0.2
+data:
+  dataset_csv: tests/fixtures/data/processed/dataset_with_lj.csv
+  indices_dir: tests/fixtures/data/processed/indices
+  sdf_dir: tests/fixtures/data/raw/sdf_files
+  cas_col: CAS
+  target_col: lj_epsilon_over_k_K
+task:
+  name: lj_epsilon
+  type: regression
+  target_col: lj_epsilon_over_k_K
+hydra:
+  run:
+    dir: runs/${process.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}_${experiment.name}
+  job:
+    name: ${process.name}

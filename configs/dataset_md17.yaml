@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: md17
+  - target_registry: md17
+  - hydra: default
+  - _self_

@@ -1,0 +1,9 @@
+defaults:
+  - process: evaluate
+  - eval: default
+  - hydra: default
+  - _self_
+
+output:
+  run_dir: "runs/evaluate/smiles"
+  exp_name: "chemberta_eval"

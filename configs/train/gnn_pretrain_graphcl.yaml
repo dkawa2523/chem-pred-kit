@@ -1,0 +1,9 @@
+train:
+  epochs: 1
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 1.0e-5
+  seed: 42
+  log_interval_sec: 30
+  progress_bar: true
+  max_batches_per_epoch: 500

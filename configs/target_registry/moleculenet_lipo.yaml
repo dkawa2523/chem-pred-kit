@@ -1,0 +1,4 @@
+target_registry:
+  - name: "lipo"
+    aliases: ["Lipophilicity", "logD", "exp"]
+    units: "logD"

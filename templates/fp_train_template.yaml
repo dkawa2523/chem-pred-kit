@@ -1,0 +1,38 @@
+defaults:
+  - process: train
+  - dataset: default
+  - task: lj_epsilon
+  - preprocess: fp_default
+  - features: fp_morgan_desc
+  - model: fp_lightgbm
+  - pretrain: default
+  - train: fp_default
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "fp_experiment"
+
+process:
+  backend: "fp"
+
+data:
+  dataset_csv: "data/processed/dataset_with_lj.csv"
+  indices_dir: "data/processed/indices"
+  sdf_dir: "data/raw/sdf_files"
+  cas_col: "CAS"
+  cache_dir: "data/processed/cache/fp"
+
+ad:
+  tanimoto_warn_threshold: 0.5
+  top_k: 5
+
+train:
+  seed: 42
+
+output:
+  run_dir: "runs/train/fp"
+  exp_name: "fp_experiment"
+  model_version: "fp_experiment"
+  plots: true

@@ -1,0 +1,19 @@
+data_collection:
+  query:
+    identifiers: []
+    filters: {}
+    limit: null
+  required_columns: ["CAS", "MolecularFormula", "Tc [K]", "Pc [Pa]", "Tb [K]"]
+  sample_id_column: "sample_id"
+  cache:
+    enabled: false
+    dir: ".cache/data_collection"
+  output:
+    raw_csv_name: "tc_pc_tb_pubchem.csv"
+    sdf_dir_name: "sdf_files"
+    overwrite: false
+  export:
+    enabled: false
+    raw_csv: "data/raw/tc_pc_tb_pubchem.csv"
+    sdf_dir: "data/raw/sdf_files"
+    overwrite: false

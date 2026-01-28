@@ -1,0 +1,14 @@
+defaults:
+  - target_registry: pcqm4mv2
+  - _self_
+
+task:
+  name: "pcqm4mv2_gap"
+  type: "regression"
+  target_names:
+    - "gap"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "gap"

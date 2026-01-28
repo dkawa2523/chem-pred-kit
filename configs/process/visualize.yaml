@@ -1,0 +1,6 @@
+process:
+  name: "visualize"
+  kind: "visualize"
+
+output:
+  out_dir: "runs/visualize"

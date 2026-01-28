@@ -1,0 +1,40 @@
+benchmark_suite:
+  name: "qm9_quick_improved"
+  description: "QM9 quick improved matrix (z-score targets, 3D radius GNNs)."
+  matrix:
+    datasets: ["qm9_quick"]
+    targets: ["gap_zscore"]
+    entries:
+      - name: "fp_morgan_desc_lgbm"
+        model: "fp_lightgbm_quick"
+        features: "fp_morgan_desc"
+      - name: "egnn_radius_quick"
+        model: "gnn_egnn_quick"
+        features: "gnn_radius_graph_quick"
+      - name: "mpnn_radius_quick"
+        model: "gnn_mpnn_quick"
+        features: "gnn_radius_graph_quick"
+      - name: "schnet_radius_quick"
+        model: "gnn_schnet_quick"
+        features: "gnn_radius_graph_quick"
+      - name: "painn_radius_quick"
+        model: "gnn_painn_quick"
+        features: "gnn_radius_graph_quick"
+  defaults:
+    preprocess:
+      fp: "fp_default"
+      gnn: "none"
+    train:
+      fp: "fp_default"
+      gnn: "gnn_quick_3d"
+    pretrain: "default"
+    eval: "default"
+  run:
+    evaluate: true
+    visualize: false
+    leaderboard: false
+    stop_on_error: true
+    dry_run: false
+  tags:
+    - "benchmark"
+    - "suite:qm9_quick_improved"

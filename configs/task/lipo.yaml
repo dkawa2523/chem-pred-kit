@@ -1,0 +1,14 @@
+defaults:
+  - target_registry: moleculenet_lipo
+  - _self_
+
+task:
+  name: "lipo"
+  type: "regression"
+  target_names:
+    - "lipo"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "lipo"

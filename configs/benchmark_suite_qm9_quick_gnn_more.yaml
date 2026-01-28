@@ -1,0 +1,11 @@
+defaults:
+  - process: benchmark_suite
+  - benchmark_suite: qm9_quick_gnn_more
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "qm9_quick_gnn_more"
+
+output:
+  exp_name: "qm9_quick_gnn_more"

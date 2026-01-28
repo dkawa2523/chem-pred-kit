@@ -1,0 +1,17 @@
+target_registry:
+  - name: "lj_epsilon_over_k_K"
+    aliases:
+      - "lj_epsilon_over_k_K"
+      - "epsilon_over_k_K"
+    units: "K"
+    transform:
+      - log
+      - standardize
+  - name: "lj_sigma_A"
+    aliases:
+      - "lj_sigma_A"
+      - "sigma_A"
+    units: "A"
+    transform:
+      - log
+      - standardize

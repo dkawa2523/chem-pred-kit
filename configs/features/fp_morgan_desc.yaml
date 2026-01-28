@@ -1,0 +1,12 @@
+featureset:
+  name: "fp_morgan_desc"
+
+featurizer:
+  fingerprint: "morgan"
+  morgan_radius: 2
+  n_bits: 2048
+  use_counts: false
+  add_descriptors: ["MolWt","TPSA","MolLogP","HBD","HBA","NumRotatableBonds","RingCount","AromaticRings"]
+
+data:
+  cache_dir: "data/processed/cache/fp"

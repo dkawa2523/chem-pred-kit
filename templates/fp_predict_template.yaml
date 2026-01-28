@@ -1,0 +1,29 @@
+defaults:
+  - process: predict
+  - dataset: default
+  - infer: fp_default
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/fp/your_exp_name"
+# model_artifact_dirs:
+#   - "runs/train/fp/exp1"
+#   - "runs/train/fp/exp2"
+
+process:
+  backend: "fp"
+
+input:
+  mode: "formula"  # formula | cas
+
+uncertainty:
+  method: null  # null | ensemble
+  n_samples: 30
+  eps: 1.0e-6
+
+output:
+  out_dir: "runs/predict"
+  exp_name: "fp_predict"
+
+data:
+  dataset_csv: "data/processed/dataset_with_lj.csv"

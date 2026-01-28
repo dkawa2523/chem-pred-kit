@@ -1,0 +1,4 @@
+target_registry:
+  - name: "esol"
+    aliases: ["ESOL", "logS", "log_solubility"]
+    units: "log mol/L"

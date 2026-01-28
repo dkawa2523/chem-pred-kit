@@ -1,0 +1,6 @@
+ad:
+  tanimoto_warn_threshold: 0.5
+  top_k: 5
+
+output:
+  plots: false

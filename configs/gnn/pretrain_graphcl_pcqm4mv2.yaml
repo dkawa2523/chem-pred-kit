@@ -1,0 +1,21 @@
+defaults:
+  - process: pretrain
+  - dataset: pcqm4mv2
+  - task: self_supervised_graphcl
+  - preprocess: none
+  - features: gnn2d
+  - model: gnn_mpnn
+  - train: gnn_pretrain_graphcl
+  - self_supervised: graphcl
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "pcqm4mv2_graphcl_mpnn_v1"
+
+process:
+  backend: "gnn"
+
+output:
+  run_dir: "runs/pretrain/gnn"
+  exp_name: "pcqm4mv2_graphcl_mpnn_v1"
