@@ -1,0 +1,34 @@
+paths:
+  raw_csv: "data/raw/moleculenet/lipo.csv"
+  sdf_dir: "data/processed/moleculenet/lipo/sdf"
+  out_csv: "data/processed/moleculenet/lipo/dataset.csv"
+  out_indices_dir: "data/processed/moleculenet/lipo/indices"
+
+columns:
+  sample_id: "sample_id"
+  cas: "sample_id"
+  smiles: "smiles"
+
+dataset:
+  name: "moleculenet"
+  dataset_name: "lipo"
+
+moleculenet:
+  root: "data/raw/moleculenet"
+  allow_download: true
+  add_hs: true
+  compute_2d: true
+  overwrite_sdf: false
+
+seed: 42
+
+split:
+  method: "scaffold"
+  seed: 42
+  fractions: [0.8, 0.1, 0.1]
+
+data:
+  dataset_csv: "data/processed/moleculenet/lipo/dataset.csv"
+  indices_dir: "data/processed/moleculenet/lipo/indices"
+  sdf_dir: "data/processed/moleculenet/lipo/sdf"
+  cas_col: "sample_id"

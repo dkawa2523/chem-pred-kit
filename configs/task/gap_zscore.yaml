@@ -1,0 +1,14 @@
+defaults:
+  - target_registry: qm9_zscore
+  - _self_
+
+task:
+  name: "gap"
+  type: "regression"
+  target_names:
+    - "gap"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "gap"

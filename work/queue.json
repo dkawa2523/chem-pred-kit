@@ -1,0 +1,922 @@
+{
+  "version": 1,
+  "updated_at": "2025-12-28T00:18:11Z",
+  "policy": {
+    "priority_order": [
+      "P0",
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "status_order": [
+      "todo",
+      "in_progress",
+      "blocked",
+      "done"
+    ],
+    "auto_set_in_progress_on_next": true
+  },
+  "tasks": [
+    {
+      "id": "000",
+      "priority": "P0",
+      "status": "done",
+      "title": "devkit導入（docs/work/codex/agentskills）",
+      "path": "work/tasks/000_bootstrap_devkit.md",
+      "skills": [
+        "S00_repo_orientation"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md"
+      ]
+    },
+    {
+      "id": "015",
+      "priority": "P0",
+      "status": "done",
+      "title": "Process単位のCLIエントリポイント整理（train/evaluate/predict/visualize 等）",
+      "path": "work/tasks/015_process_entrypoints.md",
+      "skills": [
+        "S10_hydra_config",
+        "S80_inference_cli_api",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/10_PROCESS_CATALOG.md",
+        "docs/03_CONFIG_CONVENTIONS.md"
+      ],
+      "last_presented_at": "2025-12-25T14:29:22.100432Z"
+    },
+    {
+      "id": "010",
+      "priority": "P0",
+      "status": "done",
+      "title": "Hydra config の group 再整理",
+      "path": "work/tasks/010_reorganize_hydra_configs.md",
+      "skills": [
+        "S10_hydra_config",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/03_CONFIG_CONVENTIONS.md",
+        "docs/10_PROCESS_CATALOG.md"
+      ]
+    },
+    {
+      "id": "011",
+      "priority": "P0",
+      "status": "done",
+      "title": "smoke 用 fixture データセットの追加",
+      "path": "work/tasks/011_smoke_fixture_dataset.md",
+      "skills": [
+        "S20_dataset_loader",
+        "S10_hydra_config",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/02_DATA_CONTRACTS.md"
+      ]
+    },
+    {
+      "id": "020",
+      "priority": "P0",
+      "status": "done",
+      "depends_on": [
+        "010",
+        "015"
+      ],
+      "title": "Artifact 契約の実装",
+      "path": "work/tasks/020_artifact_contract_impl.md",
+      "skills": [
+        "S90_artifacts_versioning",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/04_ARTIFACTS_AND_VERSIONING.md",
+        "docs/10_PROCESS_CATALOG.md"
+      ],
+      "started_at": "2025-12-25T15:21:42.003181Z",
+      "last_presented_at": "2025-12-26T13:32:47.627895Z"
+    },
+    {
+      "id": "025",
+      "priority": "P0",
+      "status": "done",
+      "title": "データ監査＆漏洩/重複検知（比較の信頼性確保）",
+      "path": "work/tasks/025_dataset_audit.md",
+      "skills": [
+        "S20_dataset_loader",
+        "S70_evaluator_metrics",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/02_DATA_CONTRACTS.md",
+        "docs/04_ARTIFACTS_AND_VERSIONING.md",
+        "docs/10_PROCESS_CATALOG.md"
+      ],
+      "started_at": "2025-12-26T13:58:00.220629Z",
+      "last_presented_at": "2025-12-26T14:08:23.711710Z"
+    },
+    {
+      "id": "030",
+      "priority": "P0",
+      "status": "done",
+      "title": "FeaturePipeline 統一（train/infer skew排除）",
+      "path": "work/tasks/030_featurepipeline_unify.md",
+      "skills": [
+        "S40_featurizer",
+        "S30_preprocess_pipeline",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/02_DATA_CONTRACTS.md",
+        "docs/10_PROCESS_CATALOG.md"
+      ],
+      "started_at": "2025-12-26T14:09:10.649486Z",
+      "last_presented_at": "2025-12-26T14:26:39.293855Z"
+    },
+    {
+      "id": "035",
+      "priority": "P0",
+      "status": "done",
+      "title": "split戦略の追加（random/scaffold/group、seed固定、漏洩防止）",
+      "path": "work/tasks/035_split_strategies.md",
+      "skills": [
+        "S20_dataset_loader",
+        "S10_hydra_config",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/02_DATA_CONTRACTS.md",
+        "docs/03_CONFIG_CONVENTIONS.md",
+        "docs/04_ARTIFACTS_AND_VERSIONING.md"
+      ],
+      "started_at": "2025-12-26T14:27:29.824498Z",
+      "last_presented_at": "2025-12-26T14:47:01Z"
+    },
+    {
+      "id": "040",
+      "priority": "P1",
+      "status": "done",
+      "title": "新しい目的変数（物性）追加の枠組み",
+      "path": "work/tasks/040_add_new_property_task.md",
+      "skills": [
+        "S20_dataset_loader",
+        "S60_trainer_loop",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/02_DATA_CONTRACTS.md"
+      ],
+      "started_at": "2025-12-26T15:05:12.338998Z",
+      "last_presented_at": "2025-12-26T15:05:12.339183Z"
+    },
+    {
+      "id": "050",
+      "priority": "P1",
+      "status": "done",
+      "title": "データ収集モジュール拡張設計（外部API）",
+      "path": "work/tasks/050_data_collection_module.md",
+      "skills": [
+        "S20_dataset_loader"
+      ],
+      "contracts": [
+        "docs/08_SECURITY_PRIVACY.md",
+        "docs/00_INVARIANTS.md"
+      ],
+      "started_at": "2025-12-26T15:17:53.403092Z",
+      "last_presented_at": "2025-12-26T15:17:53.403475Z"
+    },
+    {
+      "id": "060",
+      "priority": "P1",
+      "status": "done",
+      "title": "GNN 新モデル（例: GIN）追加",
+      "path": "work/tasks/060_add_gnn_model_gin.md",
+      "skills": [
+        "S50_model_plugin",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/03_CONFIG_CONVENTIONS.md"
+      ],
+      "started_at": "2025-12-26T15:35:31.322697Z",
+      "last_presented_at": "2025-12-26T15:50:13.728307Z"
+    },
+    {
+      "id": "070",
+      "priority": "P2",
+      "status": "done",
+      "title": "事前学習埋め込み特徴量の導入（任意）",
+      "path": "work/tasks/070_add_pretrained_embeddings.md",
+      "skills": [
+        "S40_featurizer"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md"
+      ],
+      "started_at": "2025-12-26T15:52:56.655493Z",
+      "last_presented_at": "2025-12-26T21:03:29.847395Z"
+    },
+    {
+      "id": "075",
+      "priority": "P0",
+      "status": "done",
+      "title": "結果集計Process（leaderboard/比較レポート生成）",
+      "path": "work/tasks/075_leaderboard_process.md",
+      "skills": [
+        "S70_evaluator_metrics",
+        "S10_hydra_config",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/04_ARTIFACTS_AND_VERSIONING.md",
+        "docs/10_PROCESS_CATALOG.md"
+      ],
+      "started_at": "2025-12-26T14:47:59.822828Z",
+      "last_presented_at": "2025-12-26T14:47:59.823069Z"
+    },
+    {
+      "id": "090",
+      "priority": "P2",
+      "status": "done",
+      "title": "CI/テスト整備",
+      "path": "work/tasks/090_ci_tests.md",
+      "skills": [
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/06_TEST_POLICY.md",
+        "docs/00_INVARIANTS.md"
+      ],
+      "started_at": "2025-12-26T21:04:09.263043Z",
+      "last_presented_at": "2025-12-26T21:04:09.263175Z"
+    },
+    {
+      "id": "100",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: Dataset Adapter Registry導入",
+      "path": "work/tasks/100_chemkit_dataset_adapter_registry.md",
+      "depends_on": [],
+      "skills": [
+        "S20_data_io",
+        "S95_tests_ci",
+        "S10_config_hydra"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/specs/chemkit_next/10_dataset_contracts.md"
+      ],
+      "started_at": "2025-12-27T05:05:58.865471Z",
+      "last_presented_at": "2025-12-27T05:26:51.194180Z"
+    },
+    {
+      "id": "101",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: Target registry/units/transform導入",
+      "path": "work/tasks/101_target_registry_units_pipeline.md",
+      "depends_on": [
+        "100"
+      ],
+      "skills": [
+        "S20_data_io",
+        "S70_eval_metrics",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/20_target_registry_and_units.md",
+        "docs/04_ARTIFACTS_AND_VERSIONING.md"
+      ],
+      "started_at": "2025-12-27T05:27:44.848074Z",
+      "last_presented_at": "2025-12-27T06:02:41.294612Z"
+    },
+    {
+      "id": "102",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: dataset別split recipe追加",
+      "path": "work/tasks/102_dataset_split_recipes_chem.md",
+      "depends_on": [
+        "100"
+      ],
+      "skills": [
+        "S20_data_io",
+        "S70_eval_metrics"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/10_dataset_contracts.md",
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ],
+      "started_at": "2025-12-27T06:03:27.860829Z",
+      "last_presented_at": "2025-12-27T06:22:15Z"
+    },
+    {
+      "id": "103",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: QM9 adapter v1",
+      "path": "work/tasks/103_qm9_adapter_v1.md",
+      "depends_on": [
+        "100",
+        "101",
+        "102"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S20_data_io",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/10_dataset_contracts.md",
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ],
+      "started_at": "2025-12-27T06:23:08.046685Z",
+      "last_presented_at": "2025-12-27T06:23:08.046846Z"
+    },
+    {
+      "id": "104",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: QM9 smoke/contract test",
+      "path": "work/tasks/104_qm9_smoke_and_contract_tests.md",
+      "depends_on": [
+        "103"
+      ],
+      "skills": [
+        "S95_tests_ci",
+        "S70_eval_metrics"
+      ],
+      "contracts": [
+        "docs/04_ARTIFACTS_AND_VERSIONING.md"
+      ],
+      "started_at": "2025-12-27T06:49:25.114697Z",
+      "last_presented_at": "2025-12-27T07:13:16Z"
+    },
+    {
+      "id": "105",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: MD17 adapter v1",
+      "path": "work/tasks/105_md17_adapter_v1.md",
+      "depends_on": [
+        "100",
+        "101",
+        "102"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S42_features_3d"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ],
+      "started_at": "2025-12-27T10:45:39.632987Z",
+      "last_presented_at": "2025-12-27T10:45:39.633158Z",
+      "completed_at": "2025-12-27T11:02:38.647921Z"
+    },
+    {
+      "id": "106",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: MoleculeNet adapters",
+      "path": "work/tasks/106_moleculenet_adapter_bundle.md",
+      "depends_on": [
+        "100",
+        "101",
+        "102"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S20_data_io"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ],
+      "started_at": "2025-12-27T11:08:53.793017Z",
+      "last_presented_at": "2025-12-27T11:35:35.742072Z",
+      "completed_at": "2025-12-27T11:32:08.597225Z"
+    },
+    {
+      "id": "107",
+      "priority": "P2",
+      "status": "done",
+      "title": "ChemKit: PCQM4Mv2 adapter (pretrain)",
+      "path": "work/tasks/107_pcqm4mv2_adapter_for_pretrain.md",
+      "depends_on": [
+        "100",
+        "101"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S64_pretraining"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ],
+      "started_at": "2025-12-27T15:54:58.988713Z",
+      "last_presented_at": "2025-12-27T16:19:44.682503Z",
+      "completed_at": "2025-12-27T16:19:44.682503Z"
+    },
+    {
+      "id": "110",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: FeatureSet registry統一",
+      "path": "work/tasks/110_featureset_registry_unify.md",
+      "depends_on": [
+        "100"
+      ],
+      "skills": [
+        "S40_features",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md",
+        "docs/00_INVARIANTS.md"
+      ],
+      "started_at": "2025-12-27T07:14:04.307730Z",
+      "last_presented_at": "2025-12-27T07:37:29.929386Z"
+    },
+    {
+      "id": "111",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: Conformer生成とキャッシュ",
+      "path": "work/tasks/111_conformer_service_and_cache.md",
+      "depends_on": [
+        "110"
+      ],
+      "skills": [
+        "S42_features_3d",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ],
+      "started_at": "2025-12-27T07:38:38.686835Z",
+      "last_presented_at": "2025-12-27T07:38:38.687096Z"
+    },
+    {
+      "id": "112",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: radius graph & distance features",
+      "path": "work/tasks/112_radius_graph_and_distance_features.md",
+      "depends_on": [
+        "111"
+      ],
+      "skills": [
+        "S42_features_3d",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ],
+      "started_at": "2025-12-27T08:03:15.206541Z",
+      "last_presented_at": "2025-12-27T08:26:02.807940Z"
+    },
+    {
+      "id": "113",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: partial charges特徴量追加",
+      "path": "work/tasks/113_partial_charges_and_electronic_desc.md",
+      "depends_on": [
+        "110"
+      ],
+      "skills": [
+        "S40_features",
+        "S42_features_3d"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ],
+      "started_at": "2025-12-27T11:36:13.523077Z",
+      "last_presented_at": "2025-12-27T11:51:51.168753Z",
+      "completed_at": "2025-12-27T11:45:45.184130Z"
+    },
+    {
+      "id": "114",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: multi-conformer特徴量",
+      "path": "work/tasks/114_multiconformer_featurization.md",
+      "depends_on": [
+        "111",
+        "112"
+      ],
+      "skills": [
+        "S42_features_3d"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ],
+      "started_at": "2025-12-27T11:53:51.434946Z",
+      "last_presented_at": "2025-12-27T12:12:37.088975Z",
+      "completed_at": "2025-12-27T12:09:18.680627Z"
+    },
+    {
+      "id": "120",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: model registry/capabilities",
+      "path": "work/tasks/120_model_registry_capabilities.md",
+      "depends_on": [
+        "110"
+      ],
+      "skills": [
+        "S50_models",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ],
+      "started_at": "2025-12-27T08:27:16.100595Z",
+      "last_presented_at": "2025-12-27T08:27:16.100883Z"
+    },
+    {
+      "id": "121",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: SchNet統合",
+      "path": "work/tasks/121_add_schnet_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ],
+      "started_at": "2025-12-27T08:47:23.277464Z",
+      "last_presented_at": "2025-12-27T09:04:23.944213Z"
+    },
+    {
+      "id": "122",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: DimeNet++統合",
+      "path": "work/tasks/122_add_dimenetpp_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md",
+        "docs/specs/chemkit_next/90_optional_dependencies.md"
+      ],
+      "started_at": "2025-12-27T12:13:08.420441Z",
+      "last_presented_at": "2025-12-27T12:32:19.000000Z",
+      "completed_at": "2025-12-27T12:27:34.630403Z"
+    },
+    {
+      "id": "123",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: PaiNN統合",
+      "path": "work/tasks/123_add_painn_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ],
+      "started_at": "2025-12-27T12:32:55.568101Z",
+      "last_presented_at": "2025-12-27T12:32:55.568391Z",
+      "completed_at": "2025-12-27T12:45:51.791146Z"
+    },
+    {
+      "id": "124",
+      "priority": "P2",
+      "status": "done",
+      "title": "ChemKit: EGNN統合",
+      "path": "work/tasks/124_add_egnn_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ],
+      "started_at": "2025-12-27T16:20:46.023286Z",
+      "last_presented_at": "2025-12-27T16:20:46.023824Z",
+      "completed_at": "2025-12-27T22:43:53.200833Z"
+    },
+    {
+      "id": "125",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: Graphormer系モデル追加",
+      "path": "work/tasks/125_add_graphormer_model.md",
+      "depends_on": [
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S50_models",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ],
+      "started_at": "2025-12-27T12:52:41.731201Z",
+      "last_presented_at": "2025-12-27T12:52:41.731504Z",
+      "completed_at": "2025-12-27T13:06:37Z"
+    },
+    {
+      "id": "126",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: SMILES Transformer追加",
+      "path": "work/tasks/126_add_smiles_transformer_model.md",
+      "depends_on": [
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S50_models",
+        "S64_pretraining"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md",
+        "docs/specs/chemkit_next/90_optional_dependencies.md"
+      ],
+      "started_at": "2025-12-27T13:12:09.889678Z",
+      "last_presented_at": "2025-12-27T13:12:09.890136Z",
+      "completed_at": "2025-12-27T13:37:02.173017Z"
+    },
+    {
+      "id": "127",
+      "priority": "P2",
+      "status": "done",
+      "title": "ChemKit: uncertainty/ensemble",
+      "path": "work/tasks/127_uncertainty_and_ensembling.md",
+      "depends_on": [
+        "150"
+      ],
+      "skills": [
+        "S70_eval_metrics"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ],
+      "started_at": "2025-12-27T23:15:36.200032Z",
+      "last_presented_at": "2025-12-27T23:15:36.200179Z",
+      "completed_at": "2025-12-27T23:52:17.190472Z"
+    },
+    {
+      "id": "130",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: multitask core",
+      "path": "work/tasks/130_multitask_core.md",
+      "depends_on": [
+        "101",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S63_multitask",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/50_multitask_and_masking.md"
+      ],
+      "started_at": "2025-12-27T09:06:04.714598Z",
+      "last_presented_at": "2025-12-27T09:06:04.714926Z",
+      "completed_at": "2025-12-27T09:31:56.788480Z"
+    },
+    {
+      "id": "131",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: multitask loss weighting",
+      "path": "work/tasks/131_loss_weighting_strategies.md",
+      "depends_on": [
+        "130"
+      ],
+      "skills": [
+        "S63_multitask"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/50_multitask_and_masking.md"
+      ],
+      "started_at": "2025-12-27T13:44:08.713273Z",
+      "last_presented_at": "2025-12-27T13:44:08.713883Z",
+      "completed_at": "2025-12-27T13:52:35.733780Z"
+    },
+    {
+      "id": "132",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: multitask leaderboard/report",
+      "path": "work/tasks/132_multitask_leaderboard_report.md",
+      "depends_on": [
+        "130",
+        "150"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ],
+      "started_at": "2025-12-27T13:58:36.645338Z",
+      "last_presented_at": "2025-12-27T13:58:36.645831Z",
+      "completed_at": "2025-12-27T14:17:22.908798Z"
+    },
+    {
+      "id": "140",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: pretrained weight loading",
+      "path": "work/tasks/140_pretrained_weight_loading_framework.md",
+      "depends_on": [
+        "120"
+      ],
+      "skills": [
+        "S64_pretraining",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ],
+      "started_at": "2025-12-27T09:42:24.722629Z",
+      "last_presented_at": "2025-12-27T09:59:04.889451Z",
+      "completed_at": "2025-12-27T09:55:23.275924Z"
+    },
+    {
+      "id": "141",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: supervised pretraining recipe",
+      "path": "work/tasks/141_supervised_pretrain_recipe.md",
+      "depends_on": [
+        "140",
+        "130",
+        "103"
+      ],
+      "skills": [
+        "S64_pretraining",
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ],
+      "started_at": "2025-12-27T14:18:36.173568Z",
+      "last_presented_at": "2025-12-27T14:18:36.174173Z",
+      "completed_at": "2025-12-27T14:31:00.109308Z"
+    },
+    {
+      "id": "142",
+      "priority": "P2",
+      "status": "done",
+      "title": "ChemKit: self-supervised pretraining",
+      "path": "work/tasks/142_self_supervised_pretrain_graphcl.md",
+      "depends_on": [
+        "140",
+        "107"
+      ],
+      "skills": [
+        "S64_pretraining"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ],
+      "started_at": "2025-12-27T23:58:13.244257Z",
+      "last_presented_at": "2025-12-28T00:18:11Z",
+      "completed_at": "2025-12-28T00:14:18Z"
+    },
+    {
+      "id": "150",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: visualization v2",
+      "path": "work/tasks/150_visualization_process_v2.md",
+      "depends_on": [
+        "103"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ],
+      "started_at": "2025-12-27T10:00:02.443845Z",
+      "last_presented_at": "2025-12-27T10:00:02.444235Z",
+      "completed_at": "2025-12-27T10:10:37.238860Z"
+    },
+    {
+      "id": "151",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: embedding visualization",
+      "path": "work/tasks/151_embedding_visualization_umap.md",
+      "depends_on": [
+        "150",
+        "120"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ],
+      "started_at": "2025-12-27T14:39:06.425648Z",
+      "last_presented_at": "2025-12-27T14:39:06.426006Z",
+      "completed_at": "2025-12-27T15:01:13.494350Z"
+    },
+    {
+      "id": "152",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: error slicing",
+      "path": "work/tasks/152_error_slicing_chem.md",
+      "depends_on": [
+        "150"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ],
+      "started_at": "2025-12-27T15:08:33.621986Z",
+      "last_presented_at": "2025-12-27T15:08:33.622572Z",
+      "completed_at": "2025-12-27T15:26:15Z"
+    },
+    {
+      "id": "160",
+      "priority": "P0",
+      "status": "done",
+      "title": "ChemKit: benchmark suite runner",
+      "path": "work/tasks/160_benchmark_suite_runner.md",
+      "depends_on": [
+        "104",
+        "121",
+        "150"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ],
+      "started_at": "2025-12-27T10:21:15.635354Z",
+      "last_presented_at": "2025-12-27T10:21:15.635467Z",
+      "completed_at": "2025-12-27T10:40:56.824765Z"
+    },
+    {
+      "id": "162",
+      "priority": "P1",
+      "status": "done",
+      "title": "ChemKit: optional deps CI strategy",
+      "path": "work/tasks/162_optional_deps_ci_strategy.md",
+      "depends_on": [
+        "121",
+        "126"
+      ],
+      "skills": [
+        "S95_tests_ci",
+        "S98_security"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/90_optional_dependencies.md"
+      ],
+      "started_at": "2025-12-27T15:29:58.551193Z",
+      "last_presented_at": "2025-12-27T15:29:58.551515Z",
+      "completed_at": "2025-12-27T15:48:06.174920Z"
+    }
+  ]
+}

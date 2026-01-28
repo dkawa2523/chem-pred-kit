@@ -1,0 +1,54 @@
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+# Allow running as `python scripts/evaluate.py ...` without installing the package.
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from src.common.config import load_config
+from src.fp import evaluate as fp_evaluate
+from src.gnn import evaluate as gnn_evaluate
+from src.smiles import evaluate as smiles_evaluate
+from src.common.uncertainty import resolve_model_artifact_dirs
+from src.models import resolve_model_family
+
+
+def _resolve_backend_from_model_dir(model_dir: Path) -> str:
+    train_cfg_path = model_dir / "config_snapshot.yaml"
+    if not train_cfg_path.exists():
+        raise FileNotFoundError(f"config_snapshot.yaml not found in model dir: {train_cfg_path}")
+    train_cfg = load_config(train_cfg_path)
+    return resolve_model_family(train_cfg)
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Evaluate model (dispatch to FP or GNN backend).")
+    ap.add_argument("--config", required=True, help="Path to a composed evaluate config.")
+    args = ap.parse_args()
+
+    cfg = load_config(args.config)
+    model_dirs = resolve_model_artifact_dirs(cfg)
+    if not model_dirs:
+        raise ValueError("model_artifact_dir(s) missing in config.")
+    backend = _resolve_backend_from_model_dir(Path(model_dirs[0]))
+    for model_dir in model_dirs[1:]:
+        other_backend = _resolve_backend_from_model_dir(Path(model_dir))
+        if other_backend != backend:
+            raise ValueError(f"Ensemble backends do not match: {backend} vs {other_backend}")
+
+    if backend == "fp":
+        fp_evaluate.run(cfg)
+    elif backend == "gnn":
+        gnn_evaluate.run(cfg)
+    elif backend == "smiles":
+        smiles_evaluate.run(cfg)
+    else:
+        raise ValueError(f"Unknown backend: {backend}")
+
+
+if __name__ == "__main__":
+    main()

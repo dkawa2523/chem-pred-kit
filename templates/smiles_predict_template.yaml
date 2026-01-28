@@ -1,0 +1,29 @@
+defaults:
+  - process: predict
+  - dataset: qm9
+  - infer: smiles_default
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/smiles/your_exp_name"
+# model_artifact_dirs:
+#   - "runs/train/smiles/exp1"
+#   - "runs/train/smiles/exp2"
+
+process:
+  backend: "smiles"
+
+input:
+  mode: "smiles"  # smiles | cas | formula
+
+uncertainty:
+  method: null  # null | ensemble | mc_dropout
+  n_samples: 30
+  eps: 1.0e-6
+
+output:
+  out_dir: "runs/predict"
+  exp_name: "smiles_predict"
+
+data:
+  dataset_csv: "data/processed/qm9/dataset.csv"

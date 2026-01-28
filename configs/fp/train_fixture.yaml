@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: fixture
+  - task: lj_epsilon
+  - preprocess: fp_default
+  - features: fp_morgan_fixture
+  - model: fp_rf_fixture
+  - pretrain: default
+  - train: fp_default
+  - eval: quick
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "fixture_fp_rf"
+
+process:
+  backend: "fp"
+
+output:
+  run_dir: "runs/train/fp"
+  exp_name: "fixture_fp_rf"

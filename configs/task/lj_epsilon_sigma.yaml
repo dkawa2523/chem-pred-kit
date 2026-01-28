@@ -1,0 +1,16 @@
+defaults:
+  - target_registry: lj
+  - _self_
+
+task:
+  name: "lj_epsilon_sigma"
+  type: "regression"
+  target_names:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"

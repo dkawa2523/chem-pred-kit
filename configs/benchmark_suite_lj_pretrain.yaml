@@ -1,0 +1,11 @@
+defaults:
+  - process: benchmark_suite
+  - benchmark_suite: lj_pretrain_transfer
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "lj_pretrain_transfer"
+
+output:
+  exp_name: "lj_pretrain_transfer"

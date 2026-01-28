@@ -1,0 +1,13 @@
+defaults:
+  - process: audit_dataset
+  - dataset: quick
+  - task: lj_epsilon
+  - audit: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "audit_dataset_quick"
+
+output:
+  exp_name: "audit_dataset_quick"

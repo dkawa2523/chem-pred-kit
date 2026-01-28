@@ -1,0 +1,14 @@
+defaults:
+  - process: predict
+  - dataset: quick
+  - infer: fp_quick
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/fp/quick_lgbm_morgan_v1"
+
+process:
+  backend: "fp"
+
+output:
+  exp_name: "fp_predict_quick"

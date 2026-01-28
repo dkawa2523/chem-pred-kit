@@ -1,0 +1,12 @@
+featureset:
+  name: "fp_morgan_quick"
+
+featurizer:
+  fingerprint: "morgan"
+  morgan_radius: 2
+  n_bits: 1024
+  use_counts: false
+  add_descriptors: ["MolWt","TPSA","MolLogP"]
+
+data:
+  cache_dir: "data/processed/quick/cache/fp"

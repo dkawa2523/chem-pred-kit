@@ -1,0 +1,6 @@
+process:
+  name: "pretrain"
+  kind: "pretrain"
+
+output:
+  run_dir: "runs/pretrain"

@@ -1,0 +1,4 @@
+pretrain:
+  ckpt_path: "runs/pretrain/gnn/pcqm4mv2_graphcl_mpnn_v1"
+  mode: "finetune"
+  strict: false

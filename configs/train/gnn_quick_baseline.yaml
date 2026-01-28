@@ -1,0 +1,12 @@
+train:
+  epochs: 20
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 1.0e-5
+  loss: "huber"
+  early_stopping:
+    patience: 5
+  seed: 42
+  log_interval_sec: 5
+  progress_bar: true
+  max_batches_per_epoch: null

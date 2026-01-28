@@ -1,0 +1,65 @@
+defaults:
+  - process: train
+  - dataset: lj_dataset_organic
+  - task: lj_epsilon_sigma_aux_derived
+  - preprocess: none
+  - features: gnn_graph_organic
+  - model: gnn_mpnn
+  - pretrain: default
+  - train: gnn_mpnn_organic
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "mpnn_lj_dataset_organic_v3"
+
+process:
+  backend: "gnn"
+
+loss:
+  weights:
+    lj_epsilon_over_k_K: 5.0
+    lj_sigma_A: 1.0
+
+task:
+  aux_targets: []
+  target_columns:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"
+  loss_per_target:
+    "lj_epsilon_over_k_K": "huber"
+    "lj_sigma_A": "huber"
+  transforms_per_target:
+    "lj_epsilon_over_k_K":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+    "lj_sigma_A":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+  metrics_per_target:
+    "lj_epsilon_over_k_K": ["mae", "rmse", "r2"]
+    "lj_sigma_A": ["mae", "rmse", "r2"]
+  derived_targets: []
+
+data:
+  target_columns:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "mpnn_lj_dataset_organic_v3"
+  plots: true
+
+train:
+  epochs: 30
+  lr: 5.0e-4
+  device: "mps"
+
+preprocess:
+  capability_auto: "on"

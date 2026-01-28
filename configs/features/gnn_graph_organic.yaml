@@ -1,0 +1,44 @@
+featureset:
+  name: "gnn_graph_organic"
+
+featurizer:
+  node_features:
+    - "atomic_num"
+    - "degree"
+    - "formal_charge"
+    - "aromatic"
+    - "num_h"
+    - "in_ring"
+  add_partial_charge: true
+  edge_mode: "radius"
+  edge_features: ["distance","gaussian"]
+  radius_cutoff: 5.0
+  max_neighbors: 32
+  gaussian_expansion:
+    enabled: true
+    num_centers: 16
+    min: 0.0
+    max: 5.0
+  use_3d_pos: true
+  add_global_descriptors:
+    - "MolWt"
+    - "HeavyAtomCount"
+    - "TPSA"
+    - "MolLogP"
+    - "HBD"
+    - "HBA"
+    - "NumRotatableBonds"
+    - "RingCount"
+    - "AromaticRings"
+  conformer:
+    enabled: true
+    seed: 42
+    method: "etkdg"
+    forcefield: "uff"
+    max_iters: 200
+    num_conformers: 1
+    aggregation: "mean"
+    on_failure: "fallback_2d"
+    max_attempts: 5
+    cache: true
+    use_smiles_fallback: true

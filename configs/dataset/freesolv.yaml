@@ -1,0 +1,34 @@
+paths:
+  raw_csv: "data/raw/moleculenet/freesolv.csv"
+  sdf_dir: "data/processed/moleculenet/freesolv/sdf"
+  out_csv: "data/processed/moleculenet/freesolv/dataset.csv"
+  out_indices_dir: "data/processed/moleculenet/freesolv/indices"
+
+columns:
+  sample_id: "sample_id"
+  cas: "sample_id"
+  smiles: "smiles"
+
+dataset:
+  name: "moleculenet"
+  dataset_name: "freesolv"
+
+moleculenet:
+  root: "data/raw/moleculenet"
+  allow_download: true
+  add_hs: true
+  compute_2d: true
+  overwrite_sdf: false
+
+seed: 42
+
+split:
+  method: "scaffold"
+  seed: 42
+  fractions: [0.8, 0.1, 0.1]
+
+data:
+  dataset_csv: "data/processed/moleculenet/freesolv/dataset.csv"
+  indices_dir: "data/processed/moleculenet/freesolv/indices"
+  sdf_dir: "data/processed/moleculenet/freesolv/sdf"
+  cas_col: "sample_id"

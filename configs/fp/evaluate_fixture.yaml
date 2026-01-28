@@ -1,0 +1,18 @@
+defaults:
+  - process: evaluate
+  - dataset: fixture
+  - task: lj_epsilon
+  - eval: quick
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/fp/fixture_fp_rf"
+
+process:
+  backend: "fp"
+
+experiment:
+  name: "fixture_fp_evaluate"
+
+output:
+  exp_name: "fixture_fp_evaluate"

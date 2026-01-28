@@ -1,0 +1,6 @@
+process:
+  name: "benchmark_suite"
+  kind: "benchmark_suite"
+
+output:
+  run_dir: "runs/benchmark_suite"

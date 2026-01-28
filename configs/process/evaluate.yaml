@@ -1,0 +1,6 @@
+process:
+  name: "evaluate"
+  kind: "evaluate"
+
+output:
+  run_dir: "runs/evaluate"

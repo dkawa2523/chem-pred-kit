@@ -1,0 +1,94 @@
+defaults:
+  - process: train
+  - dataset: lj_dataset_organic
+  - task: lj_epsilon_sigma_aux_derived
+  - preprocess: none
+  - features: gnn_graph_organic
+  - model: gnn_mpnn
+  - pretrain: default
+  - train: gnn_mpnn_organic
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "mpnn_lj_dataset_organic_aux_v1"
+
+process:
+  backend: "gnn"
+
+# Down-weight auxiliary targets to keep LJ as primary focus
+loss:
+  weights:
+    lj_epsilon_over_k_K: 5.0
+    lj_sigma_A: 1.0
+    "Tc [K]": 0.3
+    "Pc [Pa]": 0.3
+    "Tb [K]": 0.3
+
+# Ensure target transforms stabilize scale differences
+# (overrides task defaults explicitly for clarity)
+task:
+  target_columns:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"
+    - "Tc [K]"
+    - "Pc [Pa]"
+    - "Tb [K]"
+  loss_per_target:
+    "lj_epsilon_over_k_K": "huber"
+    "lj_sigma_A": "huber"
+    "Tc [K]": "mse"
+    "Pc [Pa]": "mse"
+    "Tb [K]": "mse"
+  transforms_per_target:
+    "lj_epsilon_over_k_K":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+    "lj_sigma_A":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+    "Pc [Pa]":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+    "Tc [K]":
+      - "standardize"
+    "Tb [K]":
+      - "standardize"
+  # Keep consistency loss but lower its weight to avoid dominating
+  derived_targets:
+    - name: "lj_from_critical"
+      inputs: ["Tc [K]", "Pc [Pa]", "Tb [K]"]
+      outputs: ["lj_epsilon_over_k_K", "lj_sigma_A"]
+      mode: "consistency"
+      loss_weight: 0.1
+      params:
+        epsilon_method: "bird_critical"
+        sigma_method: "bird_critical"
+
+data:
+  target_columns:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"
+    - "Tc [K]"
+    - "Pc [Pa]"
+    - "Tb [K]"
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "mpnn_lj_dataset_organic_aux_v1"
+  plots: true
+
+train:
+  epochs: 30
+  lr: 5.0e-4
+  device: "mps"
+
+preprocess:
+  capability_auto: "on"

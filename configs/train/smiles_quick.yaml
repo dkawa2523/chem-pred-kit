@@ -1,0 +1,13 @@
+train:
+  epochs: 1
+  batch_size: 16
+  lr: 1.0e-5
+  weight_decay: 1.0e-5
+  loss: "mse"
+  early_stopping:
+    patience: 1
+  seed: 42
+  device: "cpu"
+  progress_bar: false
+  log_interval_sec: 0.0
+  max_batches_per_epoch: 20

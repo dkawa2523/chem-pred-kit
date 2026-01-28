@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: md17
+  - task: energy
+  - preprocess: none
+  - features: gnn_radius_graph
+  - model: painn
+  - pretrain: default
+  - train: gnn_default
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "md17_painn_energy_v1"
+
+process:
+  backend: "gnn"
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "md17_painn_energy_v1"

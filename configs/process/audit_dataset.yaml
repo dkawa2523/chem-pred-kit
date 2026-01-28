@@ -1,0 +1,6 @@
+process:
+  name: "audit_dataset"
+  kind: "audit"
+
+output:
+  run_dir: "runs/audit"

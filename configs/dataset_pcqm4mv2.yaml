@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: pcqm4mv2
+  - target_registry: pcqm4mv2
+  - hydra: default
+  - _self_

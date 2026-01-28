@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: default
+  - task: lj_epsilon
+  - preprocess: fp_default
+  - features: fp_morgan_desc
+  - model: fp_lightgbm
+  - pretrain: default
+  - train: fp_default
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "lgbm_morgan_desc_v1"
+
+process:
+  backend: "fp"
+
+output:
+  run_dir: "runs/train/fp"
+  exp_name: "lgbm_morgan_desc_v1"

@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: qm9_quick
+  - task: gap_zscore
+  - preprocess: none
+  - features: gnn_radius_graph_quick
+  - model: gnn_egnn_quick
+  - pretrain: default
+  - train: gnn_quick_3d
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "qm9_quick_egnn_zscore"
+
+process:
+  backend: "gnn"
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "qm9_quick_egnn_zscore"

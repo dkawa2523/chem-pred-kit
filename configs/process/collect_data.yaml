@@ -1,0 +1,6 @@
+process:
+  name: "collect_data"
+  kind: "data_collection"
+
+output:
+  run_dir: "runs/collect_data"

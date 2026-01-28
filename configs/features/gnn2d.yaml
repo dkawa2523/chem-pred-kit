@@ -1,0 +1,10 @@
+featureset:
+  name: "gnn2d"
+
+featurizer:
+  node_features: ["atomic_num","degree","formal_charge","aromatic","num_h","in_ring"]
+  edge_features: ["bond_type","conjugated","aromatic"]
+  use_3d_pos: false
+  add_global_descriptors: ["MolWt","TPSA","MolLogP","HBD","HBA"]
+  conformer:
+    enabled: false

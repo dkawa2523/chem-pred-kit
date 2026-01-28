@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: lipo
+  - target_registry: moleculenet_lipo
+  - hydra: default
+  - _self_

@@ -1,0 +1,22 @@
+data/
+runs/
+.cache/
+.venv/
+.venv*/
+catboost_info/
+.DS_Store
+._*
+__pycache__/
+*.pyc
+*.pkl
+*.pt
+*.npz
+*.log
+data.zip
+
+# Raw data (keep code repo lightweight)
+data/raw/*
+!data/raw/README.md
+!data/raw/sdf_files/
+data/raw/sdf_files/*
+!data/raw/sdf_files/README.md

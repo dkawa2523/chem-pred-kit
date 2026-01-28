@@ -1,0 +1,576 @@
+{
+  "tasks": [
+    {
+      "id": "100",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: Dataset Adapter Registry導入",
+      "path": "work/tasks/100_chemkit_dataset_adapter_registry.md",
+      "depends_on": [],
+      "skills": [
+        "S20_data_io",
+        "S95_tests_ci",
+        "S10_config_hydra"
+      ],
+      "contracts": [
+        "docs/00_INVARIANTS.md",
+        "docs/specs/chemkit_next/10_dataset_contracts.md"
+      ]
+    },
+    {
+      "id": "101",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: Target registry/units/transform導入",
+      "path": "work/tasks/101_target_registry_units_pipeline.md",
+      "depends_on": [
+        "100"
+      ],
+      "skills": [
+        "S20_data_io",
+        "S70_eval_metrics",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/20_target_registry_and_units.md",
+        "docs/04_ARTIFACTS_AND_VERSIONING.md"
+      ]
+    },
+    {
+      "id": "102",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: dataset別split recipe追加",
+      "path": "work/tasks/102_dataset_split_recipes_chem.md",
+      "depends_on": [
+        "100"
+      ],
+      "skills": [
+        "S20_data_io",
+        "S70_eval_metrics"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/10_dataset_contracts.md",
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ]
+    },
+    {
+      "id": "103",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: QM9 adapter v1",
+      "path": "work/tasks/103_qm9_adapter_v1.md",
+      "depends_on": [
+        "100",
+        "101",
+        "102"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S20_data_io",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/10_dataset_contracts.md",
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ]
+    },
+    {
+      "id": "104",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: QM9 smoke/contract test",
+      "path": "work/tasks/104_qm9_smoke_and_contract_tests.md",
+      "depends_on": [
+        "103"
+      ],
+      "skills": [
+        "S95_tests_ci",
+        "S70_eval_metrics"
+      ],
+      "contracts": [
+        "docs/04_ARTIFACTS_AND_VERSIONING.md"
+      ]
+    },
+    {
+      "id": "105",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: MD17 adapter v1",
+      "path": "work/tasks/105_md17_adapter_v1.md",
+      "depends_on": [
+        "100",
+        "101",
+        "102"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S42_features_3d"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ]
+    },
+    {
+      "id": "106",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: MoleculeNet adapters",
+      "path": "work/tasks/106_moleculenet_adapter_bundle.md",
+      "depends_on": [
+        "100",
+        "101",
+        "102"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S20_data_io"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ]
+    },
+    {
+      "id": "107",
+      "priority": "P2",
+      "status": "todo",
+      "title": "ChemKit: PCQM4Mv2 adapter (pretrain)",
+      "path": "work/tasks/107_pcqm4mv2_adapter_for_pretrain.md",
+      "depends_on": [
+        "100",
+        "101"
+      ],
+      "skills": [
+        "S21_dataset_adapters",
+        "S64_pretraining"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ]
+    },
+    {
+      "id": "110",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: FeatureSet registry統一",
+      "path": "work/tasks/110_featureset_registry_unify.md",
+      "depends_on": [
+        "100"
+      ],
+      "skills": [
+        "S40_features",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md",
+        "docs/00_INVARIANTS.md"
+      ]
+    },
+    {
+      "id": "111",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: Conformer生成とキャッシュ",
+      "path": "work/tasks/111_conformer_service_and_cache.md",
+      "depends_on": [
+        "110"
+      ],
+      "skills": [
+        "S42_features_3d",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ]
+    },
+    {
+      "id": "112",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: radius graph & distance features",
+      "path": "work/tasks/112_radius_graph_and_distance_features.md",
+      "depends_on": [
+        "111"
+      ],
+      "skills": [
+        "S42_features_3d",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ]
+    },
+    {
+      "id": "113",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: partial charges特徴量追加",
+      "path": "work/tasks/113_partial_charges_and_electronic_desc.md",
+      "depends_on": [
+        "110"
+      ],
+      "skills": [
+        "S40_features",
+        "S42_features_3d"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ]
+    },
+    {
+      "id": "114",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: multi-conformer特徴量",
+      "path": "work/tasks/114_multiconformer_featurization.md",
+      "depends_on": [
+        "111",
+        "112"
+      ],
+      "skills": [
+        "S42_features_3d"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/30_feature_sets.md"
+      ]
+    },
+    {
+      "id": "120",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: model registry/capabilities",
+      "path": "work/tasks/120_model_registry_capabilities.md",
+      "depends_on": [
+        "110"
+      ],
+      "skills": [
+        "S50_models",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ]
+    },
+    {
+      "id": "121",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: SchNet統合",
+      "path": "work/tasks/121_add_schnet_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ]
+    },
+    {
+      "id": "122",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: DimeNet++統合",
+      "path": "work/tasks/122_add_dimenetpp_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md",
+        "docs/specs/chemkit_next/90_optional_dependencies.md"
+      ]
+    },
+    {
+      "id": "123",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: PaiNN統合",
+      "path": "work/tasks/123_add_painn_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ]
+    },
+    {
+      "id": "124",
+      "priority": "P2",
+      "status": "todo",
+      "title": "ChemKit: EGNN統合",
+      "path": "work/tasks/124_add_egnn_model.md",
+      "depends_on": [
+        "112",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S53_models_3d_gnns"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ]
+    },
+    {
+      "id": "125",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: Graphormer系モデル追加",
+      "path": "work/tasks/125_add_graphormer_model.md",
+      "depends_on": [
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S50_models",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md"
+      ]
+    },
+    {
+      "id": "126",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: SMILES Transformer追加",
+      "path": "work/tasks/126_add_smiles_transformer_model.md",
+      "depends_on": [
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S50_models",
+        "S64_pretraining"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/40_model_zoo.md",
+        "docs/specs/chemkit_next/90_optional_dependencies.md"
+      ]
+    },
+    {
+      "id": "127",
+      "priority": "P2",
+      "status": "todo",
+      "title": "ChemKit: uncertainty/ensemble",
+      "path": "work/tasks/127_uncertainty_and_ensembling.md",
+      "depends_on": [
+        "150"
+      ],
+      "skills": [
+        "S70_eval_metrics"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ]
+    },
+    {
+      "id": "130",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: multitask core",
+      "path": "work/tasks/130_multitask_core.md",
+      "depends_on": [
+        "101",
+        "120",
+        "103"
+      ],
+      "skills": [
+        "S63_multitask",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/50_multitask_and_masking.md"
+      ]
+    },
+    {
+      "id": "131",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: multitask loss weighting",
+      "path": "work/tasks/131_loss_weighting_strategies.md",
+      "depends_on": [
+        "130"
+      ],
+      "skills": [
+        "S63_multitask"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/50_multitask_and_masking.md"
+      ]
+    },
+    {
+      "id": "132",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: multitask leaderboard/report",
+      "path": "work/tasks/132_multitask_leaderboard_report.md",
+      "depends_on": [
+        "130",
+        "150"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ]
+    },
+    {
+      "id": "140",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: pretrained weight loading",
+      "path": "work/tasks/140_pretrained_weight_loading_framework.md",
+      "depends_on": [
+        "120"
+      ],
+      "skills": [
+        "S64_pretraining",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ]
+    },
+    {
+      "id": "141",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: supervised pretraining recipe",
+      "path": "work/tasks/141_supervised_pretrain_recipe.md",
+      "depends_on": [
+        "140",
+        "130",
+        "103"
+      ],
+      "skills": [
+        "S64_pretraining",
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ]
+    },
+    {
+      "id": "142",
+      "priority": "P2",
+      "status": "todo",
+      "title": "ChemKit: self-supervised pretraining",
+      "path": "work/tasks/142_self_supervised_pretrain_graphcl.md",
+      "depends_on": [
+        "140",
+        "107"
+      ],
+      "skills": [
+        "S64_pretraining"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/60_pretraining_and_transfer.md"
+      ]
+    },
+    {
+      "id": "150",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: visualization v2",
+      "path": "work/tasks/150_visualization_process_v2.md",
+      "depends_on": [
+        "103"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz",
+        "S95_tests_ci"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ]
+    },
+    {
+      "id": "151",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: embedding visualization",
+      "path": "work/tasks/151_embedding_visualization_umap.md",
+      "depends_on": [
+        "150",
+        "120"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ]
+    },
+    {
+      "id": "152",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: error slicing",
+      "path": "work/tasks/152_error_slicing_chem.md",
+      "depends_on": [
+        "150"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/80_visualization_and_analysis.md"
+      ]
+    },
+    {
+      "id": "160",
+      "priority": "P0",
+      "status": "todo",
+      "title": "ChemKit: benchmark suite runner",
+      "path": "work/tasks/160_benchmark_suite_runner.md",
+      "depends_on": [
+        "104",
+        "121",
+        "150"
+      ],
+      "skills": [
+        "S72_benchmarks_eval_viz"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/70_benchmarks.md"
+      ]
+    },
+    {
+      "id": "162",
+      "priority": "P1",
+      "status": "todo",
+      "title": "ChemKit: optional deps CI strategy",
+      "path": "work/tasks/162_optional_deps_ci_strategy.md",
+      "depends_on": [
+        "121",
+        "126"
+      ],
+      "skills": [
+        "S95_tests_ci",
+        "S98_security"
+      ],
+      "contracts": [
+        "docs/specs/chemkit_next/90_optional_dependencies.md"
+      ]
+    }
+  ],
+  "generated_at": "2025-12-27",
+  "note": "Append these tasks to existing work/queue.json (tasks 000-090 already done)."
+}

@@ -1,0 +1,12 @@
+defaults:
+  - process: collect_data
+  - data_collection: default
+  - data_source: dummy
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "collect_data_stub"
+
+output:
+  exp_name: "collect_data_stub"

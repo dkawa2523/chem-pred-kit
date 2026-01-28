@@ -1,0 +1,12 @@
+data_source:
+  name: "dummy"
+  client:
+    records: []
+  formatter:
+    column_map:
+      CAS: "cas"
+      MolecularFormula: "formula"
+      "Tc [K]": "tc_k"
+      "Pc [Pa]": "pc_pa"
+      "Tb [K]": "tb_k"
+    passthrough_fields: ["source"]

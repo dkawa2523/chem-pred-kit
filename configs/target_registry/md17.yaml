@@ -1,0 +1,7 @@
+target_registry:
+  - name: "energy"
+    aliases: ["energy", "E"]
+    units: "kcal/mol"
+  - name: "forces"
+    aliases: ["forces", "force", "F"]
+    units: "kcal/(mol*angstrom)"

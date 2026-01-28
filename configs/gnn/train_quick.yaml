@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: quick
+  - task: lj_epsilon
+  - preprocess: none
+  - features: gnn_graph_quick
+  - model: gnn_gcn_quick
+  - pretrain: default
+  - train: gnn_quick
+  - eval: quick
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "quick_gcn_v1"
+
+process:
+  backend: "gnn"
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "quick_gcn_v1"

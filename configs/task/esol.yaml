@@ -1,0 +1,14 @@
+defaults:
+  - target_registry: moleculenet_esol
+  - _self_
+
+task:
+  name: "esol"
+  type: "regression"
+  target_names:
+    - "esol"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "esol"

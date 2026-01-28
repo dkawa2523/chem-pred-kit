@@ -1,0 +1,68 @@
+defaults:
+  - target_registry: lj
+  - _self_
+
+task:
+  name: "lj_epsilon_sigma_aux_derived"
+  type: "regression"
+  targets: []
+  aux_targets:
+    - "Tc [K]"
+    - "Pc [Pa]"
+    - "Tb [K]"
+  target_columns:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"
+    - "Tc [K]"
+    - "Pc [Pa]"
+    - "Tb [K]"
+  loss_per_target:
+    "lj_epsilon_over_k_K": "huber"
+    "lj_sigma_A": "huber"
+    "Tc [K]": "mse"
+    "Pc [Pa]": "mse"
+    "Tb [K]": "mse"
+  transforms_per_target:
+    "lj_epsilon_over_k_K":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+    "lj_sigma_A":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+    "Pc [Pa]":
+      - name: "clip"
+        min: 1.0e-6
+      - "log"
+      - "standardize"
+    "Tc [K]":
+      - "standardize"
+    "Tb [K]":
+      - "standardize"
+  metrics_per_target:
+    "lj_epsilon_over_k_K": ["mae", "rmse", "r2"]
+    "lj_sigma_A": ["mae", "rmse", "r2"]
+    "Tc [K]": ["mae", "rmse", "r2"]
+    "Pc [Pa]": ["mae", "rmse", "r2"]
+    "Tb [K]": ["mae", "rmse", "r2"]
+  metrics: "regression"
+  derived_targets:
+    - name: "lj_from_critical"
+      inputs: ["Tc [K]", "Pc [Pa]", "Tb [K]"]
+      outputs: ["lj_epsilon_over_k_K", "lj_sigma_A"]
+      mode: "consistency"
+      loss_weight: 0.2
+      params:
+        epsilon_method: "bird_critical"
+        sigma_method: "bird_critical"
+
+data:
+  target_columns:
+    - "lj_epsilon_over_k_K"
+    - "lj_sigma_A"
+    - "Tc [K]"
+    - "Pc [Pa]"
+    - "Tb [K]"

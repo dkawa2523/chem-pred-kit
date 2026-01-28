@@ -1,0 +1,66 @@
+target_registry:
+  - name: "mu"
+    aliases: ["dipole_moment"]
+    units: "D"
+  - name: "alpha"
+    aliases: ["polarizability"]
+    units: "bohr^3"
+  - name: "homo"
+    aliases: ["HOMO"]
+    units: "eV"
+  - name: "lumo"
+    aliases: ["LUMO"]
+    units: "eV"
+  - name: "gap"
+    aliases: ["homo_lumo_gap", "HOMO-LUMO gap"]
+    units: "eV"
+    transform: "zscore"
+  - name: "r2"
+    aliases: ["R2"]
+    units: "bohr^2"
+  - name: "zpve"
+    aliases: ["ZPVE"]
+    units: "hartree"
+  - name: "U0"
+    aliases: ["u0"]
+    units: "hartree"
+  - name: "U"
+    aliases: ["u"]
+    units: "hartree"
+  - name: "H"
+    aliases: ["h"]
+    units: "hartree"
+  - name: "G"
+    aliases: ["g"]
+    units: "hartree"
+  - name: "Cv"
+    aliases: ["cv", "heat_capacity"]
+    units: "cal/(mol*K)"
+  - name: "A"
+    aliases: ["rotational_constant_A"]
+    units: "GHz"
+    required: false
+  - name: "B"
+    aliases: ["rotational_constant_B"]
+    units: "GHz"
+    required: false
+  - name: "C"
+    aliases: ["rotational_constant_C"]
+    units: "GHz"
+    required: false
+  - name: "U0_atom"
+    aliases: ["u0_atom"]
+    units: "hartree"
+    required: false
+  - name: "U_atom"
+    aliases: ["u_atom"]
+    units: "hartree"
+    required: false
+  - name: "H_atom"
+    aliases: ["h_atom"]
+    units: "hartree"
+    required: false
+  - name: "G_atom"
+    aliases: ["g_atom"]
+    units: "hartree"
+    required: false

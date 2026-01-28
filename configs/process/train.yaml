@@ -1,0 +1,6 @@
+process:
+  name: "train"
+  kind: "train"
+
+output:
+  run_dir: "runs/train"

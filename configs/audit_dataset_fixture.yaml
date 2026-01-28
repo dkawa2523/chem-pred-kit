@@ -1,0 +1,13 @@
+defaults:
+  - process: audit_dataset
+  - dataset: fixture
+  - task: lj_epsilon
+  - audit: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "audit_dataset_fixture"
+
+output:
+  exp_name: "audit_dataset_fixture"

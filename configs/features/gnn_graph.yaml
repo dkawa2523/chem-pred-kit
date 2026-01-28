@@ -1,0 +1,20 @@
+featureset:
+  name: "gnn_graph"
+
+featurizer:
+  node_features: ["atomic_num","degree","formal_charge","aromatic","num_h","in_ring"]
+  edge_features: ["bond_type","conjugated","aromatic"]
+  use_3d_pos: true
+  add_global_descriptors: ["MolWt","TPSA","MolLogP","HBD","HBA"]
+  conformer:
+    enabled: true
+    seed: 42
+    method: "etkdg"
+    forcefield: "uff"
+    max_iters: 200
+    num_conformers: 1
+    aggregation: "mean"
+    on_failure: "retry"
+    max_attempts: 3
+    cache: true
+    use_smiles_fallback: true

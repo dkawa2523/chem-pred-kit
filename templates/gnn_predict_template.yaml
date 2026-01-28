@@ -1,0 +1,29 @@
+defaults:
+  - process: predict
+  - dataset: default
+  - infer: gnn_default
+  - hydra: default
+  - _self_
+
+model_artifact_dir: "runs/train/gnn/your_exp_name"
+# model_artifact_dirs:
+#   - "runs/train/gnn/exp1"
+#   - "runs/train/gnn/exp2"
+
+process:
+  backend: "gnn"
+
+input:
+  mode: "formula"  # formula | cas
+
+uncertainty:
+  method: null  # null | ensemble | mc_dropout
+  n_samples: 30
+  eps: 1.0e-6
+
+output:
+  out_dir: "runs/predict"
+  exp_name: "gnn_predict"
+
+data:
+  dataset_csv: "data/processed/dataset_with_lj.csv"

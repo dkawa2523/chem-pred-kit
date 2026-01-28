@@ -1,0 +1,12 @@
+model:
+  name: "graph_transformer"
+  family: "gnn"
+  hidden_dim: 128
+  num_layers: 4
+  num_heads: 8
+  dropout: 0.1
+  attn_dropout: 0.1
+  mlp_ratio: 4.0
+  max_distance: 5
+  max_degree: 10
+  prefer_pyg: true

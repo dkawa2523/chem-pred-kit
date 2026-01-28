@@ -1,0 +1,7 @@
+input:
+  mode: "cas"
+
+uncertainty:
+  method: null
+  n_samples: 30
+  eps: 1.0e-6

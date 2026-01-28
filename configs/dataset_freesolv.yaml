@@ -1,0 +1,6 @@
+defaults:
+  - process: build_dataset
+  - dataset: freesolv
+  - target_registry: moleculenet_freesolv
+  - hydra: default
+  - _self_

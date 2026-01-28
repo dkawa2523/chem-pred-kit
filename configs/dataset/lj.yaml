@@ -1,0 +1,6 @@
+defaults:
+  - dataset: default
+  - _self_
+
+dataset:
+  name: "lj"

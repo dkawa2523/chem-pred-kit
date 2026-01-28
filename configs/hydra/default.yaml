@@ -1,0 +1,5 @@
+hydra:
+  run:
+    dir: "runs/${process.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}_${experiment.name}"
+  job:
+    name: "${process.name}"

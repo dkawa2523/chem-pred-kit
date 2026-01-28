@@ -1,0 +1,22 @@
+audit:
+  input:
+    source: "processed"   # processed / raw
+  columns:
+    sample_id: "sample_id"
+    cas: "CAS"
+    smiles: "smiles"
+    formula: "MolecularFormula"
+    sdf_path: "sdf_path"
+  duplicate:
+    methods: ["canonical_smiles", "inchikey"]
+    max_groups: 20
+    max_examples: 10
+  stats:
+    quantiles: [0.01, 0.05, 0.5, 0.95, 0.99]
+  report:
+    max_invalid_examples: 20
+  plots:
+    target_hist: true
+    mol_wt_hist: true
+    element_bar: true
+    max_elements: 20

@@ -1,0 +1,13 @@
+model:
+  family: "gnn"
+  name: "painn"
+  hidden_dim: 64
+  num_filters: 64
+  num_interactions: 3
+  num_rbf: 32
+  cutoff: 5.0
+  max_num_neighbors: 24
+  num_output_layers: 2
+  readout: "add"
+  backend: "torchmdnet"
+  torchmd_model: "equivariant-transformer"

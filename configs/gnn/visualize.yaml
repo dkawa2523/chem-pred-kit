@@ -1,0 +1,23 @@
+defaults:
+  - process: visualize
+  - hydra: default
+  - _self_
+
+input:
+  evaluate_run_dir: "runs/evaluate/gnn_evaluate"
+
+plots:
+  splits: ["val", "test"]
+  include_train_hist: true
+  target_mode: "primary"
+  error_slicing:
+    enabled: true
+
+process:
+  backend: "gnn"
+
+experiment:
+  name: "gnn_visualize"
+
+output:
+  exp_name: "gnn_visualize"

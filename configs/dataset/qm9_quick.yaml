@@ -1,0 +1,35 @@
+paths:
+  raw_csv: "data/raw/qm9/qm9.csv"
+  sdf_dir: "data/processed/qm9_quick/sdf"
+  out_csv: "data/processed/qm9_quick/dataset.csv"
+  out_indices_dir: "data/processed/qm9_quick/indices"
+
+columns:
+  sample_id: "sample_id"
+  cas: "sample_id"
+  smiles: "smiles"
+
+dataset:
+  name: "qm9"
+
+qm9:
+  root: "data/raw/qm9"
+  allow_download: true
+  add_hs: true
+  compute_2d: true
+  overwrite_sdf: false
+
+seed: 42
+
+limit_rows: 2000
+
+split:
+  method: "random"
+  seed: 42
+  fractions: [0.8, 0.1, 0.1]
+
+data:
+  dataset_csv: "data/processed/qm9_quick/dataset.csv"
+  indices_dir: "data/processed/qm9_quick/indices"
+  sdf_dir: "data/processed/qm9_quick/sdf"
+  cas_col: "sample_id"

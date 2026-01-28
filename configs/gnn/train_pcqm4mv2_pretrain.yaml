@@ -1,0 +1,22 @@
+defaults:
+  - process: train
+  - dataset: pcqm4mv2
+  - task: pcqm4mv2_gap
+  - preprocess: none
+  - features: gnn2d
+  - model: gnn_mpnn
+  - pretrain: default
+  - train: gnn_pretrain_pcqm4mv2
+  - eval: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "pcqm4mv2_pretrain_mpnn_v1"
+
+process:
+  backend: "gnn"
+
+output:
+  run_dir: "runs/train/gnn"
+  exp_name: "pcqm4mv2_pretrain_mpnn_v1"

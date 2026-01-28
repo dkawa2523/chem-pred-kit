@@ -1,0 +1,4 @@
+target_registry:
+  - name: "gap"
+    aliases: ["homo_lumo_gap", "homolumo_gap", "HOMO-LUMO gap", "HOMO_LUMO_gap"]
+    units: "eV"

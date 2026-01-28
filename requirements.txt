@@ -1,0 +1,20 @@
+# Core
+# Note: CI/optional splits live under requirements/base.txt and requirements/optional-*.txt
+numpy
+pandas
+pyyaml
+tqdm
+matplotlib
+scikit-learn
+joblib
+
+# Chemistry
+rdkit  # usually installed via conda-forge; pip availability depends on platform
+
+# FP models
+lightgbm
+catboost
+
+# GNN (optional; install matching versions manually)
+torch
+# torch-geometric  # install via official instructions

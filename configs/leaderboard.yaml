@@ -1,0 +1,11 @@
+defaults:
+  - process: leaderboard
+  - leaderboard: default
+  - hydra: default
+  - _self_
+
+experiment:
+  name: "leaderboard"
+
+output:
+  exp_name: "leaderboard"

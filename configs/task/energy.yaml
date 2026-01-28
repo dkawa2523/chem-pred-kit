@@ -1,0 +1,14 @@
+defaults:
+  - target_registry: md17
+  - _self_
+
+task:
+  name: "energy"
+  type: "regression"
+  target_names:
+    - "energy"
+  metrics: "regression"
+
+data:
+  target_names:
+    - "energy"
